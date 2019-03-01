@@ -1,0 +1,5 @@
+As a logged-in user, I want to search for a speci?c movie in order to add it to my online ÅgWatchlistÅh.
+
+Problem:
+        Q1: How will the users be able to search for movies?
+        A1: We can match the movie name to itÅfs ID in the database.

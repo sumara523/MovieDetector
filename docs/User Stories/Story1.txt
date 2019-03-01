@@ -1,0 +1,6 @@
+As a user, I want to link or create an account in order to store info and get news as a logged-in user.
+
+Problem:
+        Q1: How to store usersÅf account as a member of our API?
+        A1: We will accept an account from social media, such as Facebook, which already deal with
+        account creation.
