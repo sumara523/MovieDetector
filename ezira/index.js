@@ -16,7 +16,8 @@ var options = {
 };
 
 //GET Genres Information
-var genres_json;
+var genres;
+
 var req = http.request(options, function (res) {
   var chunks = [];
 
@@ -27,15 +28,15 @@ var req = http.request(options, function (res) {
   res.on("end", function () {
     var body = Buffer.concat(chunks);
     console.log(body.toString());
-    genres_json = JSON.parse(body);
+    genres = JSON.parse(body);
   });
 });
 
 req.write("{}");
 req.end();
 
-app.get('/api/members', (req, res) => {
-  res.json(genres_json);
+app.get('/genres', (req, res) => {
+  res.json(genres);
 });
 
 
