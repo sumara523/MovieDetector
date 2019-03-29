@@ -17,18 +17,14 @@
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
    <script>
     function myScript(search) {
-      $( "body" ).append( "<p>Test</p>" );
-        $(document).ready(function(){
-            $("a").click(function(event){
-                $.ajax({
-                    url: "https://api.themoviedb.org/3/movie/343611?api_key=fa03116693262062589d14a72cc612d0",
-                dataType: 'jsonp',
-                success: function(data){
-                      alert("hi");
-                }
-               });
-            });
-         });
+      $.ajax({
+      //This part is not working, my api key is at the end of the url
+      url: "https://api.themoviedb.org/3/movie/" + search + "?api_key=fa03116693262062589d14a72cc612d0",
+      dataType: 'jsonp',
+      success: function(data){
+         alert("hi");
+       }
+      });
     }
    </script>
 
