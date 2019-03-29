@@ -4,7 +4,8 @@ var http = require("https");
 
 
 const app = express();
-app.set('view engine', 'ejs');
+//app.set('view engine', 'ejs');
+
 
 
 var options = {
@@ -16,7 +17,7 @@ var options = {
 };
 
 //GET Genres Information
-var genres;
+var genre;
 
 var req = http.request(options, function (res) {
   var chunks = [];
@@ -28,15 +29,20 @@ var req = http.request(options, function (res) {
   res.on("end", function () {
     var body = Buffer.concat(chunks);
     console.log(body.toString());
-    genres = JSON.parse(body);
+    genre = JSON.parse(body);
   });
 });
 
 req.write("{}");
 req.end();
 
-app.get('/genres', (req, res) => {
-  res.json(genres);
+app.get('/genre', (req, res) => {
+  res.json(genre);
+});
+
+app.get('/',function(req,res)
+{
+  res.sendFile(path.join(__dirname + "/views/genres.html"));
 });
 
 
