@@ -7,25 +7,22 @@
   </head>
   <body>
     <h1>MovieDetector</h1>
-    <<!-- h1>Our Post Page!</h1>
-      <% genre.forEach(function(genre){ %>
-      <li><%= genre[i].title %> - <%= genre[i].name %> </li>
-      <% }) %> -->
     <i>Enter movie id </i>
     <input type="text" id="movieid" />
     <input type="button" value="submit" id="btn" onclick="myScript(movieid)"/>
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
    <script>
     function myScript(search) {
-      $.ajax({
-      //This part is not working, my api key is at the end of the url
-      url: "https://api.themoviedb.org/3/movie/" + search + "?api_key=fa03116693262062589d14a72cc612d0",
-      dataType: 'jsonp',
-      success: function(data){
-         alert("hi");
-       }
-      });
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8000/jasonderulo.py",
+            data: {param: search.value}
+        }).done(function (o) {
+            document.getElementById("body").append(o);
+        });
     }
+
    </script>
 
   </body>

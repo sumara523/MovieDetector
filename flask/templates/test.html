@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title> MovieDetector</title>
+  </head>
+  <body>
+    <h1>MovieDetector</h1>
+    <i>Enter movie id </i>
+    <form action="/test" method="POST">
+    <input type="text" name="id">
+    <input type="submit" name="submit">
+    </form>
+    {% if x %}
+    {% for movie in x %}
+    <p>{{ movie }}</p>
+    {% endfor %}
+    {% endif %}
+
+  </body>
+</html>
