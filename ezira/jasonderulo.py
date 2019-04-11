@@ -3,8 +3,8 @@ import urllib, json
 def search(id):
     url = "https://api.themoviedb.org/3/movie/" + str(id) + "?api_key=fa03116693262062589d14a72cc612d0"
 
-
-    response = urllib.urlopen(url)
+#I need .request here if you guy have to delete it out, please do.
+    response = urllib.request.urlopen(url)
     data = json.loads(response.read())
     ret = ''
     ret = ret + str(data.get(u'title')) + "\n"
