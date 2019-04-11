@@ -1,8 +1,12 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, redirect, url_for, session, g, flash, \
+render_template
 import requests
 import time
 import urllib, json
-from flask_oauth import OAuth
+from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy.orm import scoped_session, sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
+import flask_oauthlib
 #https://pythonhosted.org/Flask-OAuth/
 #^ All log-in tutorial
 app = Flask(__name__)
