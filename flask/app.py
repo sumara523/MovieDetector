@@ -2,7 +2,9 @@ from flask import Flask, request, render_template
 import requests
 import time
 import urllib, json
-
+from flask_oauth import OAuth
+#https://pythonhosted.org/Flask-OAuth/
+#^ All log-in tutorial
 app = Flask(__name__)
 
 @app.route("/", methods = ['GET','POST'])
