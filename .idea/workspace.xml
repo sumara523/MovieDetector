@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="4028c4be-3909-4e86-95c0-eebdf6160041" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/MovieDetector.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MovieDetector.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask/templates/test.html" afterDir="false" />
+    </list>
+=======
     <list default="true" id="84b31828-1542-429e-bace-4e5be4225b08" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flask/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask/app.py" afterDir="false" />
@@ -8,6 +16,7 @@
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
+>>>>>>> 320c405d0fcadd4c62c481499268d30a14168eeb
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,14 +25,72 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/flask/app.py">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flask/templates/welcome.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="27" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ezira/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+>>>>>>> 320c405d0fcadd4c62c481499268d30a14168eeb
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flask/templates/test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+=======
+>>>>>>> 3f5f33a7f8f50875ad8714d83dd94fd939c02b8b
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/flask/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="262">
               <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="360">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+>>>>>>> 320c405d0fcadd4c62c481499268d30a14168eeb
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
+        <entry file="file://$PROJECT_DIR$/flask/templates/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="146" selection-start-line="12" selection-start-column="146" selection-end-line="12" selection-end-column="146" />
+=======
+        <entry file="file://$PROJECT_DIR$/ezira/jasonderulo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+>>>>>>> 320c405d0fcadd4c62c481499268d30a14168eeb
+>>>>>>> 3f5f33a7f8f50875ad8714d83dd94fd939c02b8b
             </state>
           </provider>
         </entry>
@@ -33,7 +100,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+<<<<<<< HEAD
+        <option value="HTML File" />
+=======
         <option value="Python Script" />
+>>>>>>> 320c405d0fcadd4c62c481499268d30a14168eeb
       </list>
     </option>
   </component>
@@ -43,6 +114,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/../../CS568/lab7/lab7.py" />
+        <option value="$PROJECT_DIR$/flask/templates/welcome.html" />
+        <option value="$PROJECT_DIR$/flask/templates/test.html" />
+        <option value="$PROJECT_DIR$/flask/templates/login.html" />
+        <option value="$PROJECT_DIR$/flask/app.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="85" />
+    <option name="y" value="25" />
+    <option name="width" value="1750" />
+    <option name="height" value="980" />
+=======
         <option value="$PROJECT_DIR$/ezira/index.js" />
         <option value="$PROJECT_DIR$/ezira/jasonderulo.py" />
         <option value="$PROJECT_DIR$/ezira/views/genres.html" />
@@ -72,6 +158,7 @@
     <option name="y" value="23" />
     <option name="width" value="1346" />
     <option name="height" value="659" />
+>>>>>>> 320c405d0fcadd4c62c481499268d30a14168eeb
   </component>
   <component name="ProjectView">
     <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
@@ -95,6 +182,29 @@
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="flask" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
+<<<<<<< HEAD
+            <path>
+              <item name="MovieDetector" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieDetector" type="462c0819:PsiDirectoryNode" />
+              <item name="flask" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieDetector" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieDetector" type="462c0819:PsiDirectoryNode" />
+              <item name="flask" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieDetector" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieDetector" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieDetector" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+=======
+>>>>>>> 320c405d0fcadd4c62c481499268d30a14168eeb
           </expand>
           <select />
         </subPane>
@@ -103,12 +213,27 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+=======
+<<<<<<< HEAD
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../venv" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+=======
+>>>>>>> 3f5f33a7f8f50875ad8714d83dd94fd939c02b8b
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.15.3" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+>>>>>>> 320c405d0fcadd4c62c481499268d30a14168eeb
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -122,6 +247,7 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Python.app">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MovieDetector" />
@@ -144,7 +270,15 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+=======
+<<<<<<< HEAD
+  <component name="RunManager" selected="Python.app">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
+  <component name="RunManager">
+>>>>>>> 3f5f33a7f8f50875ad8714d83dd94fd939c02b8b
     <configuration name="jasonderulo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+>>>>>>> 320c405d0fcadd4c62c481499268d30a14168eeb
       <module name="MovieDetector" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -152,11 +286,13 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ezira" />
+<<<<<<< HEAD
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/flask" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ezira/jasonderulo.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/flask/app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -165,6 +301,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="lab7" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MovieDetector" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../CS568/lab7" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../CS568/lab7/lab7.py" />
+=======
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ezira" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ezira/jasonderulo.py" />
+>>>>>>> 320c405d0fcadd4c62c481499268d30a14168eeb
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+<<<<<<< HEAD
     <list>
       <item itemvalue="Python.app" />
       <item itemvalue="Python.jasonderulo" />
@@ -174,12 +340,37 @@
         <item itemvalue="Python.app" />
       </list>
     </recent_temporary>
+=======
+<<<<<<< HEAD
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.app" />
+        <item itemvalue="Python.lab7" />
+      </list>
+    </recent_temporary>
+=======
+>>>>>>> 320c405d0fcadd4c62c481499268d30a14168eeb
+>>>>>>> 3f5f33a7f8f50875ad8714d83dd94fd939c02b8b
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
+      <changelist id="4028c4be-3909-4e86-95c0-eebdf6160041" name="Default Changelist" comment="" />
+      <created>1554474190625</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554474190625</updated>
+      <workItem from="1554474201505" duration="1366000" />
+      <workItem from="1554998737781" duration="4505000" />
+      <workItem from="1555006208786" duration="473000" />
+      <workItem from="1555006824546" duration="1778000" />
+      <workItem from="1555008625857" duration="802000" />
+      <workItem from="1555009453819" duration="442000" />
+      <workItem from="1555010905929" duration="4458000" />
+=======
       <changelist id="84b31828-1542-429e-bace-4e5be4225b08" name="Default Changelist" comment="" />
       <created>1553845593057</created>
       <option name="number" value="Default" />
@@ -187,28 +378,72 @@
       <updated>1553845593057</updated>
       <workItem from="1553845598464" duration="1673000" />
       <workItem from="1554165640385" duration="247000" />
+<<<<<<< HEAD
       <workItem from="1555010845387" duration="899000" />
+=======
+      <workItem from="1555010845387" duration="659000" />
+>>>>>>> 320c405d0fcadd4c62c481499268d30a14168eeb
+>>>>>>> 3f5f33a7f8f50875ad8714d83dd94fd939c02b8b
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="6309000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="13824000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24329759" />
+=======
+    <option name="totallyTimeSpent" value="6069000" />
+>>>>>>> 3f5f33a7f8f50875ad8714d83dd94fd939c02b8b
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="23" width="1346" height="659" extended-state="0" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2684049" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25283018" />
+>>>>>>> 320c405d0fcadd4c62c481499268d30a14168eeb
+>>>>>>> 3f5f33a7f8f50875ad8714d83dd94fd939c02b8b
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2962963" />
+=======
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32956153" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+=======
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26102293" />
+>>>>>>> 3f5f33a7f8f50875ad8714d83dd94fd939c02b8b
       <window_info anchor="bottom" id="Debug" order="3" weight="0.22045855" />
+>>>>>>> 320c405d0fcadd4c62c481499268d30a14168eeb
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32924962" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3026874" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+=======
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
@@ -218,11 +453,57 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="right" id="R Packages" order="4" />
+>>>>>>> 320c405d0fcadd4c62c481499268d30a14168eeb
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+<<<<<<< HEAD
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MovieDetector$app.coverage" NAME="app Coverage Results" MODIFIED="1555014923174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flask" />
+    <SUITE FILE_PATH="coverage/MovieDetector$lab7.coverage" NAME="lab7 Coverage Results" MODIFIED="1554999173781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../CS568/lab7" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../../CS568/lab7/lab7.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ezira/views/genres.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ezira/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/templates/welcome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/templates/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="146" selection-start-line="12" selection-start-column="146" selection-end-line="12" selection-end-column="146" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+=======
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ezira/jasonderulo.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -233,6 +514,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ezira/views/genres.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="330">
           <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
         </state>
@@ -252,6 +534,11 @@
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+>>>>>>> 320c405d0fcadd4c62c481499268d30a14168eeb
+>>>>>>> 3f5f33a7f8f50875ad8714d83dd94fd939c02b8b
         </state>
       </provider>
     </entry>
