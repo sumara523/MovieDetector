@@ -38,11 +38,14 @@ def detect():
         response = urllib.request.urlopen(url)
         data = json.loads(response.read())
         ret = ''
-        ret = ret + str(data.get(u'title')) + "\n"
-        ret = ret + str(data.get(u'tagline')) + "\n"
-        ret = ret + str(data.get(u'id')) + "\n"
-        ret = ret + str(data.get(u'overview')) + "\n"
-        ret = ret + str(data.get(u'release_date'))
+        ret = ret + "<h1>Title: "
+        ret = ret + str(data.get(u'title')) + "</h1>"
+        ret = ret + "<h2>"
+        ret = ret + str(data.get(u'tagline')) + "</h2>"
+        ret = ret + "<h3>Overview: "
+        ret = ret + str(data.get(u'overview')) + "</h3>"
+        ret = ret + "<h2>Release Date: "
+        ret = ret + str(data.get(u'release_date')) + "</h2>"
         return ret
     else:
         return  render_template("test.html")
