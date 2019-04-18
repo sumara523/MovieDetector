@@ -14,6 +14,10 @@ import json
 # >>>>>>> 3f5f33a7f8f50875ad8714d83dd94fd939c02b8b
 #https://pythonhosted.org/Flask-OAuth/
 #^ All log-in tutorial
+app = Flask(__name__)
+
+api_key = 'fa03116693262062589d14a72cc612d0'
+api_url = 'https://api.themoviedb.org/3/'
 
 class Movie:
     def __init__(self, title, poster, popularity, release_date, overview):
@@ -35,8 +39,6 @@ def get_json(url):
         if response != None:
             response.close()
 
-app = Flask(__name__)
-
 @app.route("/", methods = ['GET','POST'])
 def index():
     return render_template("welcome.html")
@@ -52,10 +54,10 @@ def detect():
 
         result = request.form['id']
 
-        url = "https://api.themoviedb.org/3/search/movie?api_key=fa03116693262062589d14a72cc612d0&language=en-US&query=" + result + "&page=1"
+        url = "https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&query=" + result + "&page=1"
         #url = "https://api.themoviedb.org/3/movie/343611?api_key=fa03116693262062589d14a72cc612d0"
         img_url = 'https://image.tmdb.org/t/p/w500'
-        response = get_json(url)
+        json = get_json(url)
         movies = []
         for movie in json['results']:
             movies.append(Movie(movie['title'],
@@ -63,11 +65,13 @@ def detect():
                                 movie['popularity'],
                                 movie['release_date'],
                                 movie['overview']))
+        return movies
     else:
-        return  render_template("test.html")
-# I try to make it search movie from name but I'm not quite get why it is not working.
-# I also get the path for the poster.
-# Oh oh, I also define class of movie for us to use.
+        return render_template("test.html")
+# This is searching by name.
+# I cannot get it to work yet, and I do not know why.
+# Searching by ID is DOWN there, and Sumara Get it to work.(I just try adding poster to it not sure if it work.)
+
 """
 def detect():
     if request.method == 'POST':
@@ -83,6 +87,8 @@ def detect():
         ret = ''
         ret = ret + "<h1>Title: "
         ret = ret + str(data.get(u'title')) + "</h1>"
+        ret = ret + "<h1>Poster: "#just try(Delete if not working)
+        ret = ret + 'https://image.tmdb.org/t/p/w500' + str(data.get(u'poster_path')) + "</h1>"#just try(Delete if not working)
         ret = ret + "<h2>"
         ret = ret + str(data.get(u'tagline')) + "</h2>"
         ret = ret + "<h3>Overview: "
@@ -93,6 +99,7 @@ def detect():
     else:
         return  render_template("test.html")
 """
+
 
 
 if __name__ == "__main__":
