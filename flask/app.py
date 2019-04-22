@@ -65,7 +65,7 @@ def detect():
                                 movie['popularity'],
                                 movie['release_date'],
                                 movie['overview']))
-        return movies
+        return render_template("test.html", movie)
     else:
         return render_template("test.html")
 # This is searching by name.
