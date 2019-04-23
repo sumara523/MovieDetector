@@ -4,6 +4,7 @@ import requests
 import time
 import urllib
 import json
+from flask_oauthlib.client import OAuth, OAuthException
 # <<<<<<< HEAD
 # #from flask_oauth import OAuth
 # =======
@@ -14,7 +15,25 @@ import json
 # >>>>>>> 3f5f33a7f8f50875ad8714d83dd94fd939c02b8b
 #https://pythonhosted.org/Flask-OAuth/
 #^ All log-in tutorial
+FACEBOOK_APP_ID = '???'
+FACEBOOK_APP_SECRET = '???'
+
 app = Flask(__name__)
+app.debug = True
+app.secret_key = 'MovieDetector'
+oauth = OAuth(app)
+
+facebook = oauth.remote_app(
+    'facebook',
+    consumer_key=FACEBOOK_APP_ID,
+    consumer_secret=FACEBOOK_APP_SECRET,
+    request_token_params={'scope': 'email'},
+    base_url='https://graph.facebook.com',
+    request_token_url=None,
+    access_token_url='/oauth/access_token',
+    access_token_method='GET',
+    authorize_url='https://www.facebook.com/dialog/oauth'
+)
 
 api_key = 'fa03116693262062589d14a72cc612d0'
 api_url = 'https://api.themoviedb.org/3/'
@@ -32,7 +51,7 @@ def get_json(url):
     '''Returns json text from a URL'''
     response = None
     try:
-        response = urllib.urlopen(url)
+        response = urllib.request.urlopen(url)
         json_text = response.read().decode(encoding = 'utf-8')
         return json.loads(json_text)
     finally:
