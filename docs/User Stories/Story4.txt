@@ -1,5 +1,8 @@
-As a logged-in user, I want to unsubscribe a specific movie in order to quit getting its update news and delete it from ÅgWatchlistÅh.
+As a logged-in user, I want to subscribe a specific movie in order to receive the updated news and movieÅfs info.
 
-Problem:
-        Q1: What will happen to the info they got before unsubscribing
-        A1: The former info they got will stay as it is, but the user will not get a new notification
+Problem: 
+    Q1: How to send the user an information?
+    A1: We notify the user by text that there is an update on the movie they subscribed to.
+
+    Q2: How will a user subscribe to a movie
+    A2: We ask for their social media/phone number on our user friendly web app.

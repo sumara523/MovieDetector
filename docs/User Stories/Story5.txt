@@ -1,5 +1,5 @@
-As a logged-in user, I want to get the updated info in order to locate the theater and know movie showtimes.
+As a logged-in user, I want to unsubscribe a specific movie in order to quit getting its update news and delete it from ÅgWatchlistÅh.
 
 Problem:
-        Q1: Will the location being used be from the userÅfs current location
-        A1: Since user location can change often, the location to be used will be from their home address
+        Q1: What will happen to the info they got before unsubscribing
+        A1: The former info they got will stay as it is, but the user will not get a new notification

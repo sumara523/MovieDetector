@@ -1,4 +1,4 @@
-As a logged-in user, I want to search for a speci?c movie in order to add it to my online ÅgWatchlistÅh.
+As a logged-in user, I want to type a name of a movie in order to get the info.
 
 Problem:
         Q1: How will the users be able to search for movies?
