@@ -4,7 +4,6 @@ import requests
 import time
 import urllib
 import json
-<<<<<<< HEAD
 from pymongo import MongoClient
 
 #Connect to MovieDetector database and user collection
@@ -12,9 +11,7 @@ client = MongoClient()
 db = client.MovieDetector
 
 
-=======
 from flask_oauthlib.client import OAuth, OAuthException
->>>>>>> 5b8eb33dfee85b90b089f27463a35da8de921e8a
 # <<<<<<< HEAD
 # #from flask_oauth import OAuth
 # =======
@@ -25,12 +22,8 @@ from flask_oauthlib.client import OAuth, OAuthException
 # >>>>>>> 3f5f33a7f8f50875ad8714d83dd94fd939c02b8b
 #https://pythonhosted.org/Flask-OAuth/
 #^ All log-in tutorial
-<<<<<<< HEAD
-
-=======
 FACEBOOK_APP_ID = '???'
 FACEBOOK_APP_SECRET = '???'
->>>>>>> 5b8eb33dfee85b90b089f27463a35da8de921e8a
 
 app = Flask(__name__)
 app.debug = True
