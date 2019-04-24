@@ -10,7 +10,6 @@ from pymongo import MongoClient
 #Connect to MovieDetector database and user collection
 client = MongoClient()
 db = client.MovieDetector
-collection = db.users
 
 
 =======
