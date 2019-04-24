@@ -11,16 +11,14 @@
   </head>
   <body>
     <h3>MovieDetector</h3>
-    <i>Enter movie id </i>
+    <i>Search Movie Title </i>
     <form action="/test" method="POST">
     <input type="text" name="id">
     <input type="submit" name="submit">
     </form>
-    {% if x %}
-    {% for movie in x %}
-    <p>{{ movie }}</p>
+    {% for title in movies %}
+    <p>{{ title }}</p>
     {% endfor %}
-    {% endif %}
 
   </body>
 </html>
