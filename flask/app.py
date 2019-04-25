@@ -45,22 +45,22 @@ facebook = oauth.remote_app(
 api_key = 'fa03116693262062589d14a72cc612d0'
 api_url = 'https://api.themoviedb.org/3/'
 
-'''
+
 class Movie:
-    def __init__(self, title):
+    def __init__(self, title, poster, popularity, release_date, overview):
         self.title = title
-        #self.poster = poster
-        #self.popularity = popularity
-        #self.release_date = release_date
-        #self.overview = overview
-        #self.myRating = 0
-'''
+        self.poster = poster
+        self.popularity = popularity
+        self.release_date = release_date
+        self.overview = overview
+        self.myRating = 0
+
 
 def get_json(url):
     '''Returns json text from a URL'''
     response = None
     try:
-        response = urllib.urlopen(url)
+        response = urllib.request.urlopen(url)
         json_text = response.read().decode(encoding = 'utf-8')
         return json.loads(json_text)
     finally:
@@ -114,8 +114,12 @@ def detect():
         movie_list = get_json(url)
         movies = []
         for i in movie_list['results']:
-            movies.append(i['title'])
-        return render_template("test.html", movies = movies)
+            movies.append(Movie(i['title'],
+                                img_url + i['poster_path'],
+                                i['popularity'],
+                                i['release_date'],
+                                i['overview']))
+        return render_template("test.html", movies = movies, listnum = len(movies))
     else:
         return render_template("test.html")
 
