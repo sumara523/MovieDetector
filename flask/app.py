@@ -4,11 +4,12 @@ import requests
 import time
 import urllib
 import json
+import pymongo
 from pymongo import MongoClient
 
-#Connect to MovieDetector database and user collection
+'''Connect to MovieDetector database'''
 client = MongoClient()
-db = client.MovieDetector
+db = client.movies
 
 
 from flask_oauthlib.client import OAuth, OAuthException
@@ -22,6 +23,7 @@ from flask_oauthlib.client import OAuth, OAuthException
 # >>>>>>> 3f5f33a7f8f50875ad8714d83dd94fd939c02b8b
 #https://pythonhosted.org/Flask-OAuth/
 #^ All log-in tutorial
+
 FACEBOOK_APP_ID = '???'
 FACEBOOK_APP_SECRET = '???'
 
@@ -45,31 +47,39 @@ facebook = oauth.remote_app(
 api_key = 'fa03116693262062589d14a72cc612d0'
 api_url = 'https://api.themoviedb.org/3/'
 
-'''
-class Movie:
-    def __init__(self, title):
-        self.title = title
-        #self.poster = poster
-        #self.popularity = popularity
-        #self.release_date = release_date
-        #self.overview = overview
-        #self.myRating = 0
-'''
-
 def get_json(url):
-    '''Returns json text from a URL'''
+    '''Returns json text from a URL '''
     response = None
     try:
-        response = urllib.request.urlopen(url)
-        json_text = response.read().decode(encoding = 'utf-8')
-        return json.loads(json_text)
+        response = requests.get(url)
+        json_data = json.loads(response.text)
+        return json_data
     finally:
         if response != None:
             response.close()
 
 @app.route("/", methods = ['GET','POST'])
 def index():
-    return render_template("welcome.html")
+    return render_template("index.html")
+
+'''Route to get movie search keyword from user'''
+@app.route('/search', methods=['GET','POST'])
+def search():
+    return render_template("search.html")
+
+'''Route to display search results and allow user to select movie'''
+@app.route('/results', methods = ['GET','POST'])
+def results():
+    if request.method == 'POST':
+        print("THIS IS THE POST REQUEST")
+        keyword = request.form['movie_search']
+        url = 'https://api.themoviedb.org/3/search/movie?api_key=fa03116693262062589d14a72cc612d0&page=1&query=' + keyword
+        img_url = 'https://image.tmdb.org/t/p/w500'
+        movie_list = get_json(url)
+    movies = []
+    for i in movie_list['results']:
+        movies.append(i['title'])
+    return render_template("results.html", movies = movies)
 
 @app.route('/login')
 def login():
@@ -101,23 +111,6 @@ def facebook_authorized():
 def get_facebook_oauth_token():
     return session.get('oauth_token')
 
-#https://developers.themoviedb.org/3/search/search-movies
-#https://stackoverflow.com/questions/14152276/themoviedb-json-api-with-jquery
-#search example
-@app.route('/test', methods=['GET','POST'])
-def detect():
-    if request.method == 'POST':
-        result = request.form['id']
-
-        url = 'https://api.themoviedb.org/3/search/movie?api_key=fa03116693262062589d14a72cc612d0&page=1&query=' + result
-        img_url = 'https://image.tmdb.org/t/p/w500'
-        movie_list = get_json(url)
-        movies = []
-        for i in movie_list['results']:
-            movies.append(i['title'])
-        return render_template("test.html", movies = movies)
-    else:
-        return render_template("test.html")
 
 """
 def detect():
