@@ -86,10 +86,17 @@ def results():
         url = 'https://api.themoviedb.org/3/search/movie?api_key=fa03116693262062589d14a72cc612d0&page=1&query=' + keyword
         img_url = 'https://image.tmdb.org/t/p/w500'
         movie_list = get_json(url)
-    movies = []
-    for i in movie_list['results']:
-        movies.append(i['title'])
-    return render_template("results.html", movies = movies)
+        movies = []
+        for i in movie_list['results']:
+            movies.append(Movie(i['title'],
+                                img_url + i['poster_path'],
+                                i['id'],
+                                i['release_date'],
+                                i['overview']))
+        return render_template("results.html", movies = movies, listnum = len(movies))
+    else:
+        return render_template("results.html")
+
 
 @app.route('/login')
 def login():
