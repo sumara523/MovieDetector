@@ -125,7 +125,7 @@ def detect():
 
 """
 @app.route('/test', methods=['GET','POST'])
-def detect(id):
+def detect():
     if request.method == 'POST':
 
         result = request.form['id']
@@ -148,6 +148,8 @@ def detect(id):
         ret = ret + "<h2>Release Date: "
         ret = ret + str(data.get(u'release_date')) + "</h2>"
         return render_template("list.html", ret = ret)
+    else:
+        return  render_template("list.html")
 """
 
 
