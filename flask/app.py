@@ -60,7 +60,7 @@ def get_json(url):
     '''Returns json text from a URL'''
     response = None
     try:
-        response = urllib.request.urlopen(url)
+        response = urllib.urlopen(url)
         json_text = response.read().decode(encoding = 'utf-8')
         return json.loads(json_text)
     finally:
