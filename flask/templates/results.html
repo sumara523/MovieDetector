@@ -25,6 +25,19 @@
 </head>
 
 <body>
+    {% block body %}
+    <h2>Please Log-in to use Watchlist</h2>
+    {% if session['name'] %}
+    Hello {{ session['name'] }}!
+    {% else %}
+
+    Sign in with Facebook.
+
+    <a href="{{ url_for('login') }}"><img src="{{
+        url_for('static', filename='img/sign-in2.png') }}" alt="sign in"></a>
+    {% endif %}
+    {% endblock %}
+
   <div class="container-fluid">
     <h3>MovieDetector</h3>
     <div class="list-group">
