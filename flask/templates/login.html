@@ -1,13 +1,13 @@
 {% block body %}
 <h2>Flask Login App</h2>
-{% if session['screen_name'] %}
-Hello {{ session['screen_name'] }}!
+{% if session['name'] %}
+Hello {{ session['name'] }}!
 {% else %}
 
-Sign in with twitter.
+Sign in with Facebook.
 
 <a href="{{ url_for('login') }}"><img src="{{
-        url_for('static', filename='sign-in.png') }}" alt="sign in"></a>
+        url_for('static', filename='sign-in2.png') }}" alt="sign in"></a>
 {% endif %}
 {% endblock %}
 <! twitter Tutorial: https://pythonspot.com/login-to-flask-app-with-twitter/?fbclid=IwAR21WsqDh_0Aks5Y-7Jv3od1vEqqdGIno9CzsLMqd5V0x7N4L_U-PpoUVhM>

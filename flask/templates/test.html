@@ -10,17 +10,26 @@
       </style>
   </head>
   <body>
+  {% block body %}
+    <h2>Please Log-in to use Watchlist</h2>
+    {% if session['name'] %}
+    Hello {{ session['name'] }}!
+    {% else %}
+
+    Sign in with Facebook.
+
+    <a href="{{ url_for('login') }}"><img src=url('static/img/signin2.png') alt="sign in"></a>
+    {% endif %}
+    {% endblock %}
+
     <h3>MovieDetector</h3>
-    <i>Enter movie id </i>
+    <i>Search Movie Title </i>
     <form action="/test" method="POST">
-    <input type="text" name="id">
+    <input type="text" name="title">
     <input type="submit" name="submit">
     </form>
-    {% if x %}
-    {% for movie in x %}
-    <p>{{ movie }}</p>
+    {% for title in movies %}
+    <p>{{ title }}</p>
     {% endfor %}
-    {% endif %}
-
   </body>
 </html>
