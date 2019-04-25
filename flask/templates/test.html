@@ -31,7 +31,9 @@
     </form>
     {% for i in movies %}
         <p>{{ i.title }}</p>
+        <a href = "https://api.themoviedb.org/3/movie/{{ i.id }}?api_key=fa03116693262062589d14a72cc612d0">
         <img class = "clickable" style = "width:10%" src = {{ i.poster }}>
+        </a>
         <p>{{ i.overview }}</p>
     {% endfor %}
   </body>
