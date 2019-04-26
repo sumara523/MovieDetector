@@ -126,6 +126,7 @@ def facebook_authorized():
     session['oauth_token'] = (resp['access_token'], '')
     me = facebook.get('/me?fields=id,name')
     session["log-in"] = True
+    session["id"] = str(me.data['id'])
     session["name"] = str(me.data['name'])
     flash('Logged in as ' + str(me.data['name']))
     return redirect(url_for('index'))
