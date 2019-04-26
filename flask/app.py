@@ -124,7 +124,7 @@ def facebook_authorized():
         return 'Access denied: %s' % resp.message
 
     session['oauth_token'] = (resp['access_token'], '')
-    me = facebook.get('/me?fields=id,name')
+    me = facebook.get('/me?fields=id,name,user_mobile_phone')
     flash('Logged in as ' + str(me.data['name']))
     return redirect(url_for('index'))
 
