@@ -17,7 +17,13 @@
       background: black;
       color: white;
     }
+    h4 {
+        text-align: left;
+      }
 
+      .btn {
+        font-size: 36px;
+      }
     h3 {
       text-align: center;
     }
@@ -27,15 +33,20 @@
 <body>
     {% block body %}
     <h2>Please Log-in to use Watchlist</h2>
-    {% if session['name'] %}
-    Hello {{ session['name'] }}!
-    {% else %}
-
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+        {% else %}
     Sign in with Facebook.
 
     <a href="{{ url_for('login') }}"><img src="{{
         url_for('static', filename='img/sign-in2.png') }}" alt="sign in"></a>
-    {% endif %}
+        {% endif %}
+        {% endwith %}
     {% endblock %}
 
   <div class="container-fluid">

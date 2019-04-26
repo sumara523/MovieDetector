@@ -36,7 +36,7 @@ facebook = oauth.remote_app(
     'facebook',
     consumer_key=FACEBOOK_APP_ID,
     consumer_secret=FACEBOOK_APP_SECRET,
-    request_token_params={'scope': 'email'},
+    request_token_params={'scope': 'public_profile,email'},
     base_url='https://graph.facebook.com',
     request_token_url=None,
     access_token_url='/oauth/access_token',
@@ -89,7 +89,7 @@ def results():
         movies = []
         for i in movie_list['results']:
             movies.append(Movie(i['title'],
-                                img_url + i['poster_path'],
+                                img_url + str(i['poster_path']),
                                 i['id'],
                                 i['release_date'],
                                 i['overview']))
@@ -107,6 +107,11 @@ def login():
     )
     return facebook.authorize(callback=callback)
 
+@app.route('/logout')
+def logout():
+    session.pop('oauth_token', None)
+    return redirect(url_for('index'))
+
 @app.route('/login/authorized')
 def facebook_authorized():
     resp = facebook.authorized_response()
@@ -119,9 +124,9 @@ def facebook_authorized():
         return 'Access denied: %s' % resp.message
 
     session['oauth_token'] = (resp['access_token'], '')
-    me = facebook.get('/me')
-    return 'Logged in as id=%s name=%s redirect=%s' % \
-        (me.data['id'], me.data['name'], request.args.get('next'))
+    me = facebook.get('/me?fields=id,name')
+    flash('Logged in as ' + str(me.data['name']))
+    return redirect(url_for('index'))
 
 
 @facebook.tokengetter
@@ -152,7 +157,7 @@ def detect():
 
 """
 @app.route('/test', methods=['GET','POST'])
-def detect():
+def detect(id):
     if request.method == 'POST':
 
         result = request.form['id']
