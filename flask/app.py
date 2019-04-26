@@ -23,7 +23,6 @@ from flask_oauthlib.client import OAuth, OAuthException
 # >>>>>>> 3f5f33a7f8f50875ad8714d83dd94fd939c02b8b
 #https://pythonhosted.org/Flask-OAuth/
 #^ All log-in tutorial
-
 FACEBOOK_APP_ID = '2094967570803709'
 FACEBOOK_APP_SECRET = '8463d71df35e3d004f3cd087a520c2d0'
 
@@ -61,6 +60,9 @@ def get_json(url):
     '''Returns json text from a URL '''
     response = None
     try:
+        response = urllib.request.urlopen(url)
+        json_text = response.read().decode(encoding = 'utf-8')
+        return json.loads(json_text)
         response = requests.get(url)
         json_data = json.loads(response.text)
         return json_data
@@ -146,11 +148,9 @@ def detect():
         movie_list = get_json(url)
         movies = []
         for i in movie_list['results']:
-            movies.append(Movie(i['title'],
-                                img_url + i['poster_path'],
-                                i['id'],
-                                i['release_date'],
-                                i['overview']))
+            movies.append(i['title'])
+        return render_template("test.html", movies=movies)
+        movies.append(Movie(i['title'], img_url + i['poster_path'], i['id'], i['release_date'],i['overview']))
         return render_template("test.html", movies = movies, listnum = len(movies))
     else:
         return render_template("test.html")
