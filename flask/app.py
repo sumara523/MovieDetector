@@ -126,7 +126,9 @@ def facebook_authorized():
         return 'Access denied: %s' % resp.message
 
     session['oauth_token'] = (resp['access_token'], '')
-    me = facebook.get('/me?fields=id,name,user_mobile_phone')
+    me = facebook.get('/me?fields=id,name')
+    session['Log-in'] = True
+    session['name'] = str(me.data['name'])
     flash('Logged in as ' + str(me.data['name']))
     return redirect(url_for('index'))
 
@@ -138,6 +140,7 @@ def get_facebook_oauth_token():
 #https://developers.themoviedb.org/3/search/search-movies
 #https://stackoverflow.com/questions/14152276/themoviedb-json-api-with-jquery
 #search example
+"""
 @app.route('/test', methods=['GET','POST'])
 def detect():
     if request.method == 'POST':
@@ -150,11 +153,11 @@ def detect():
         for i in movie_list['results']:
             movies.append(i['title'])
         return render_template("test.html", movies=movies)
-        movies.append(Movie(i['title'], img_url + i['poster_path'], i['id'], i['release_date'],i['overview']))
+        movies.append(Movie(i['title'], img_url + str(i['poster_path']), i['id'], i['release_date'],i['overview']))
         return render_template("test.html", movies = movies, listnum = len(movies))
     else:
         return render_template("test.html")
-
+"""
 """
 @app.route('/test', methods=['GET','POST'])
 def detect(id):
