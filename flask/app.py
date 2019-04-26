@@ -115,7 +115,7 @@ def detect():
         movies = []
         for i in movie_list['results']:
             movies.append(i['title'])
-        return render_template("test.html", movies = movies)
+        return render_template("test.html", movies=movies)
     else:
         return render_template("test.html")
 
