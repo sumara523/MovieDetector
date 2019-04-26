@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f0881293-e4ac-470f-a67c-9ac852d2d42b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/flask/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask/templates/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/templates/results.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask/templates/results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask/templates/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask/templates/test.html" afterDir="false" />
-    </list>
+    <list default="true" id="f0881293-e4ac-470f-a67c-9ac852d2d42b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/ezira/node_modules/" />
     <ignored path="$PROJECT_DIR$/node/nodetest1/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flask/templates/search.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="33" selection-start-line="33" selection-end-line="48" selection-end-column="18" />
+            <state relative-caret-position="357">
+              <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -65,8 +59,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/flask/templates/results.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+            <state relative-caret-position="140">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -264,12 +258,12 @@
       <workItem from="1556208827602" duration="759000" />
       <workItem from="1556216146003" duration="10772000" />
       <workItem from="1556230719525" duration="362000" />
-      <workItem from="1556235192965" duration="9348000" />
+      <workItem from="1556235192965" duration="9629000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36378000" />
+    <option name="totallyTimeSpent" value="36659000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -380,15 +374,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/flask/templates/search.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="33" selection-start-line="33" selection-end-line="48" selection-end-column="18" />
+        <state relative-caret-position="357">
+          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flask/templates/results.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+        <state relative-caret-position="140">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
