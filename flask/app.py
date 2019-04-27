@@ -47,6 +47,7 @@ facebook = oauth.remote_app(
 api_key = 'fa03116693262062589d14a72cc612d0'
 api_url = 'https://api.themoviedb.org/3/'
 
+
 class Movie:
     def __init__(self, title, poster, id, release_date, overview):
         self.title = title
