@@ -47,18 +47,6 @@ facebook = oauth.remote_app(
 api_key = 'fa03116693262062589d14a72cc612d0'
 api_url = 'https://api.themoviedb.org/3/'
 
-class Movie:
-    def __init__(self, title, poster, id, release_date, overview):
-        self.title = title
-        self.poster = poster
-        self.id = id
-        self.release_date = release_date
-        self.overview = overview
-        self.myRating = 0
-
-
-def get_json(url):
-
 
 class Movie:
     def __init__(self, title, poster, id, release_date, overview):
@@ -98,12 +86,9 @@ def results():
         keyword = request.form['movie_search']
         url = 'https://api.themoviedb.org/3/search/movie?api_key=fa03116693262062589d14a72cc612d0&page=1&query=' + keyword
         img_url = 'https://image.tmdb.org/t/p/w500'
-        movie_list = get_json_ezira(url)
+        movie_list = get_json(url)
         movie_results = movie_list['results']
     return render_template("results.html", movie_results = movie_results)
-
-@app.route('/account')
-def account():
 
 
 @app.route('/login')
@@ -117,7 +102,6 @@ def login():
 
 @app.route('/logout')
 def logout():
-    session.pop('log-in', None)
     session.pop('oauth_token', None)
     return redirect(url_for('index'))
 
