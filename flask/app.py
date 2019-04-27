@@ -9,7 +9,7 @@ from pymongo import MongoClient
 
 '''Connect to MovieDetector database'''
 client = MongoClient()
-db = client.movies
+db = client.users
 
 
 from flask_oauthlib.client import OAuth, OAuthException
@@ -58,6 +58,19 @@ class Movie:
 
 
 def get_json(url):
+
+
+class Movie:
+    def __init__(self, title, poster, id, release_date, overview):
+        self.title = title
+        self.poster = poster
+        self.id = id
+        self.release_date = release_date
+        self.overview = overview
+        self.myRating = 0
+
+
+def get_json(url):
     '''Returns json text from a URL '''
     response = None
     try:
@@ -85,17 +98,12 @@ def results():
         keyword = request.form['movie_search']
         url = 'https://api.themoviedb.org/3/search/movie?api_key=fa03116693262062589d14a72cc612d0&page=1&query=' + keyword
         img_url = 'https://image.tmdb.org/t/p/w500'
-        movie_list = get_json(url)
-        movies = []
-        for i in movie_list['results']:
-            movies.append(Movie(i['title'],
-                                img_url + str(i['poster_path']),
-                                i['id'],
-                                i['release_date'],
-                                i['overview']))
-        return render_template("results.html", movies = movies, listnum = len(movies))
-    else:
-        return render_template("results.html")
+        movie_list = get_json_ezira(url)
+        movie_results = movie_list['results']
+    return render_template("results.html", movie_results = movie_results)
+
+@app.route('/account')
+def account():
 
 
 @app.route('/login')
@@ -176,16 +184,16 @@ def detect(id):
         ret = ret + "<h1>Title: "
         ret = ret + str(data.get(u'title')) + "</h1>"
         ret = ret + "<h1>Poster: "#just try(Delete if not working)
-        ret = ret + '<img class = "clickable" style = "width:30%" src = {{ i.poster }}>"#just try(Delete if not working)
+        ret = ret + 'https://image.tmdb.org/t/p/w500' + str(data.get(u'poster_path')) + "</h1>"#just try(Delete if not working)
         ret = ret + "<h2>"
         ret = ret + str(data.get(u'tagline')) + "</h2>"
         ret = ret + "<h3>Overview: "
         ret = ret + str(data.get(u'overview')) + "</h3>"
         ret = ret + "<h2>Release Date: "
         ret = ret + str(data.get(u'release_date')) + "</h2>"
-        return render_template("list.html", ret = ret)
+        return ret
     else:
-        return  render_template("list.html")
+        return  render_template("test.html")
 """
 
 
