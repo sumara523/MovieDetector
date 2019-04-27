@@ -24,8 +24,8 @@ from flask_oauthlib.client import OAuth, OAuthException
 #https://pythonhosted.org/Flask-OAuth/
 #^ All log-in tutorial
 
-FACEBOOK_APP_ID = '???'
-FACEBOOK_APP_SECRET = '???'
+FACEBOOK_APP_ID = '2094967570803709'
+FACEBOOK_APP_SECRET = '8463d71df35e3d004f3cd087a520c2d0'
 
 app = Flask(__name__)
 app.debug = True
@@ -36,7 +36,7 @@ facebook = oauth.remote_app(
     'facebook',
     consumer_key=FACEBOOK_APP_ID,
     consumer_secret=FACEBOOK_APP_SECRET,
-    request_token_params={'scope': 'email'},
+    request_token_params={'scope': 'public_profile,email'},
     base_url='https://graph.facebook.com',
     request_token_url=None,
     access_token_url='/oauth/access_token',
@@ -47,7 +47,30 @@ facebook = oauth.remote_app(
 api_key = 'fa03116693262062589d14a72cc612d0'
 api_url = 'https://api.themoviedb.org/3/'
 
-def get_json_ezira(url):
+class Movie:
+    def __init__(self, title, poster, id, release_date, overview):
+        self.title = title
+        self.poster = poster
+        self.id = id
+        self.release_date = release_date
+        self.overview = overview
+        self.myRating = 0
+
+
+def get_json(url):
+
+
+class Movie:
+    def __init__(self, title, poster, id, release_date, overview):
+        self.title = title
+        self.poster = poster
+        self.id = id
+        self.release_date = release_date
+        self.overview = overview
+        self.myRating = 0
+
+
+def get_json(url):
     '''Returns json text from a URL '''
     response = None
     try:
@@ -81,7 +104,7 @@ def results():
 
 @app.route('/account')
 def account():
-    
+
 
 @app.route('/login')
 def login():
@@ -91,6 +114,11 @@ def login():
         _external=True
     )
     return facebook.authorize(callback=callback)
+
+@app.route('/logout')
+def logout():
+    session.pop('oauth_token', None)
+    return redirect(url_for('index'))
 
 @app.route('/login/authorized')
 def facebook_authorized():
@@ -104,18 +132,43 @@ def facebook_authorized():
         return 'Access denied: %s' % resp.message
 
     session['oauth_token'] = (resp['access_token'], '')
-    me = facebook.get('/me')
-    return 'Logged in as id=%s name=%s redirect=%s' % \
-        (me.data['id'], me.data['name'], request.args.get('next'))
+    me = facebook.get('/me?fields=id,name')
+    session["log-in"] = True
+    session["id"] = str(me.data['id'])
+    session["name"] = str(me.data['name'])
+    flash('Logged in as ' + str(me.data['name']))
+    return redirect(url_for('index'))
 
 
 @facebook.tokengetter
 def get_facebook_oauth_token():
     return session.get('oauth_token')
 
+#https://developers.themoviedb.org/3/search/search-movies
+#https://stackoverflow.com/questions/14152276/themoviedb-json-api-with-jquery
+#search example
+@app.route('/test', methods=['GET','POST'])
+def detect():
+    if request.method == 'POST':
+        result = request.form['title']
+
+        url = 'https://api.themoviedb.org/3/search/movie?api_key=fa03116693262062589d14a72cc612d0&page=1&query=' + (result.replace(":", "%3A")).replace(" ", "%20")
+        img_url = 'https://image.tmdb.org/t/p/w500'
+        movie_list = get_json(url)
+        movies = []
+        for i in movie_list['results']:
+            movies.append(Movie(i['title'],
+                                img_url + i['poster_path'],
+                                i['id'],
+                                i['release_date'],
+                                i['overview']))
+        return render_template("test.html", movies = movies, listnum = len(movies))
+    else:
+        return render_template("test.html")
 
 """
-def detect():
+@app.route('/test', methods=['GET','POST'])
+def detect(id):
     if request.method == 'POST':
 
         result = request.form['id']
