@@ -57,16 +57,6 @@ class Movie:
         self.myRating = 0
 
 
-class Movie:
-    def __init__(self, title, poster, id, release_date, overview):
-        self.title = title
-        self.poster = poster
-        self.id = id
-        self.release_date = release_date
-        self.overview = overview
-        self.myRating = 0
-
-
 def get_json(url):
     '''Returns json text from a URL '''
     response = None
@@ -98,9 +88,6 @@ def results():
         movie_list = get_json(url)
         movie_results = movie_list['results']
     return render_template("results.html", movie_results = movie_results)
-
-#@app.route('/account')
-#def account():
 
 
 @app.route('/login')

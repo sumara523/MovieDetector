@@ -35,6 +35,7 @@
     <h2>Please Log-in to use Watchlist</h2>
         {% if session['log-in'] %}
         <li>Log in as {{ session["name"] }}</li>
+            <a href = "{{ url_for('logout') }}"class="btn btn-warning" role="button">logout</a>
         {% else %}
     Sign in with Facebook.
 
