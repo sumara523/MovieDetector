@@ -9,7 +9,7 @@ from pymongo import MongoClient
 
 '''Connect to MovieDetector database'''
 client = MongoClient()
-db = client.movies
+db = client.users
 
 
 from flask_oauthlib.client import OAuth, OAuthException
@@ -23,14 +23,9 @@ from flask_oauthlib.client import OAuth, OAuthException
 # >>>>>>> 3f5f33a7f8f50875ad8714d83dd94fd939c02b8b
 #https://pythonhosted.org/Flask-OAuth/
 #^ All log-in tutorial
-<<<<<<< HEAD
 
 FACEBOOK_APP_ID = '???'
 FACEBOOK_APP_SECRET = '???'
-=======
-FACEBOOK_APP_ID = '2094967570803709'
-FACEBOOK_APP_SECRET = '8463d71df35e3d004f3cd087a520c2d0'
->>>>>>> 091c9c9f657532f3194c6d771f5af130a25481f0
 
 app = Flask(__name__)
 app.debug = True
@@ -52,21 +47,7 @@ facebook = oauth.remote_app(
 api_key = 'fa03116693262062589d14a72cc612d0'
 api_url = 'https://api.themoviedb.org/3/'
 
-<<<<<<< HEAD
-=======
-
-class Movie:
-    def __init__(self, title, poster, id, release_date, overview):
-        self.title = title
-        self.poster = poster
-        self.id = id
-        self.release_date = release_date
-        self.overview = overview
-        self.myRating = 0
-
-
->>>>>>> 091c9c9f657532f3194c6d771f5af130a25481f0
-def get_json(url):
+def get_json_ezira(url):
     '''Returns json text from a URL '''
     response = None
     try:
@@ -94,11 +75,13 @@ def results():
         keyword = request.form['movie_search']
         url = 'https://api.themoviedb.org/3/search/movie?api_key=fa03116693262062589d14a72cc612d0&page=1&query=' + keyword
         img_url = 'https://image.tmdb.org/t/p/w500'
-        movie_list = get_json(url)
-    movies = []
-    for i in movie_list['results']:
-        movies.append(i['title'])
-    return render_template("results.html", movies = movies)
+        movie_list = get_json_ezira(url)
+        movie_results = movie_list['results']
+    return render_template("results.html", movie_results = movie_results)
+
+@app.route('/account')
+def account():
+    
 
 @app.route('/login')
 def login():
@@ -130,33 +113,8 @@ def facebook_authorized():
 def get_facebook_oauth_token():
     return session.get('oauth_token')
 
-<<<<<<< HEAD
-=======
-#https://developers.themoviedb.org/3/search/search-movies
-#https://stackoverflow.com/questions/14152276/themoviedb-json-api-with-jquery
-#search example
-@app.route('/test', methods=['GET','POST'])
-def detect():
-    if request.method == 'POST':
-        result = request.form['title']
-
-        url = 'https://api.themoviedb.org/3/search/movie?api_key=fa03116693262062589d14a72cc612d0&page=1&query=' + (result.replace(":", "%3A")).replace(" ", "%20")
-        img_url = 'https://image.tmdb.org/t/p/w500'
-        movie_list = get_json(url)
-        movies = []
-        for i in movie_list['results']:
-            movies.append(Movie(i['title'],
-                                img_url + i['poster_path'],
-                                i['id'],
-                                i['release_date'],
-                                i['overview']))
-        return render_template("test.html", movies = movies, listnum = len(movies))
-    else:
-        return render_template("test.html")
->>>>>>> 091c9c9f657532f3194c6d771f5af130a25481f0
 
 """
-@app.route('/test', methods=['GET','POST'])
 def detect():
     if request.method == 'POST':
 
@@ -172,16 +130,16 @@ def detect():
         ret = ret + "<h1>Title: "
         ret = ret + str(data.get(u'title')) + "</h1>"
         ret = ret + "<h1>Poster: "#just try(Delete if not working)
-        ret = ret + '<img class = "clickable" style = "width:30%" src = {{ i.poster }}>"#just try(Delete if not working)
+        ret = ret + 'https://image.tmdb.org/t/p/w500' + str(data.get(u'poster_path')) + "</h1>"#just try(Delete if not working)
         ret = ret + "<h2>"
         ret = ret + str(data.get(u'tagline')) + "</h2>"
         ret = ret + "<h3>Overview: "
         ret = ret + str(data.get(u'overview')) + "</h3>"
         ret = ret + "<h2>Release Date: "
         ret = ret + str(data.get(u'release_date')) + "</h2>"
-        return render_template("list.html", ret = ret)
+        return ret
     else:
-        return  render_template("list.html")
+        return  render_template("test.html")
 """
 
 

@@ -27,11 +27,27 @@
 <body>
   <div class="container-fluid">
     <h3>MovieDetector</h3>
-    <div class="list-group">
-      {% for title in movies %}
-      <a href="#" onclick="getMovie(this)" class="list-group-item list-group-item-action" id="{{title}}"> {{title}} </a>
+    <form class="" action="index.html" method="post">
+      {% for movie in movie_results %}
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="{{movie['title']}}" id="{{movie['title']}}" value="option1">
+        <label class="form-check-label" for="{{movie['title']}}">
+          {{movie['title']}}
+        </label>
+        <div class="row">
+          <div class="col-2">
+            <img src="https://image.tmdb.org/t/p/w500{{movie['poster_path']}}" alt="..." class="img-fluid">
+          </div>
+          <div class="col">
+            <p>{{movie['overview']}}</p>
+          </div>
+        </div>
+        <hr>
+        <hr>
+      </div>
       {% endfor %}
-    </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
   </div>
 
   <!-- Optional JavaScript -->
