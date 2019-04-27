@@ -102,7 +102,10 @@ def login():
 
 @app.route('/logout')
 def logout():
+    session.pop('log-in',None)
     session.pop('oauth_token', None)
+    session.pop('id', None)
+    session.pop('name', None)
     return redirect(url_for('index'))
 
 @app.route('/login/authorized')
