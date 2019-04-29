@@ -81,13 +81,45 @@ def search():
 @app.route('/results', methods = ['GET','POST'])
 def results():
     if request.method == 'POST':
-        print("THIS IS THE POST REQUEST")
         keyword = request.form['movie_search']
         url = 'https://api.themoviedb.org/3/search/movie?api_key=fa03116693262062589d14a72cc612d0&page=1&query=' + keyword
         img_url = 'https://image.tmdb.org/t/p/w500'
         movie_list = get_json(url)
         movie_results = movie_list['results']
     return render_template("results.html", movie_results = movie_results)
+
+'''Store selected movie into user account and display movies in user account '''
+@app.route('/account', methods = ['GET','POST'])
+def account():
+    if request.method == 'POST':
+        id = request.form['search_results']
+        url = 'https://api.themoviedb.org/3/movie/' + id + '?api_key=' + api_key + '&language=en-US'
+        movie_info = get_json(url)
+        title = movie_info['original_title']
+        release = movie_info['release_date']
+        imdb_id = movie_info['imdb_id']
+        insert_movie = {
+            "id": id,
+            "title": title,
+            "release_date": release,
+            "imdb_id": imdb_id
+        }
+
+        if db.collection.count_documents({"name": session["name"]}) == 0:
+            print("User not found, will insert")
+            insert_user = {
+                "name": session["name"],
+                "watchlist":[]
+            }
+            db.collection.insert_one(insert_user)
+
+        db.collection.find_one_and_update(
+            { 'name': session["name"] },
+            { '$push': { 'watchlist': insert_movie } }
+        )
+
+        account_info = db.collection.find_one({'name': session["name"]})
+    return render_template("account.html", info = account_info)
 
 
 @app.route('/login')
