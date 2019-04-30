@@ -5,6 +5,7 @@ import time
 import urllib
 import json
 import pymongo
+from twilio.rest import Client
 from pymongo import MongoClient
 
 '''Connect to MovieDetector database'''
@@ -191,7 +192,19 @@ def detect():
         return render_template("test.html", movies = movies, listnum = len(movies))
     else:
         return render_template("test.html")
+def text(number, movie):
+    # Your Account Sid and Auth Token from twilio.com/console
+    account_sid = 'AC00192dda66594328c17c3ea44ff4153b'
+    auth_token = 'twilio will suspend my account if i share this'
+    client = Client(account_sid, auth_token)
 
+    message = client.messages.create(
+        from_='+19282956808',
+        body='I died',
+        to='+18605183270'
+    )
+
+    print(message.sid)
 """
 @app.route('/test', methods=['GET','POST'])
 def detect(id):
@@ -220,8 +233,5 @@ def detect(id):
     else:
         return  render_template("test.html")
 """
-
-
-
 if __name__ == "__main__":
     app.run(debug=True)
