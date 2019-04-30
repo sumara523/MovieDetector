@@ -27,6 +27,7 @@ from flask_oauthlib.client import OAuth, OAuthException
 
 FACEBOOK_APP_ID = '2094967570803709'
 FACEBOOK_APP_SECRET = '8463d71df35e3d004f3cd087a520c2d0'
+twilio_token = '827119ae4c807c269e5f24b2c02cdd0e'
 
 app = Flask(__name__)
 app.debug = True
@@ -200,7 +201,7 @@ def detect():
 def registertext(number, movie):
     # Your Account Sid and Auth Token from twilio.com/console
     account_sid = 'AC00192dda66594328c17c3ea44ff4153b'
-    auth_token = 'make sure you dont push the token'
+    auth_token = twilio_token
     client = Client(account_sid, auth_token)
     message = client.messages.create(
         from_='+18608524749',
@@ -208,36 +209,6 @@ def registertext(number, movie):
         to='+1' + number
     )
     print(message.sid)
-
-
-"""
-@app.route('/test', methods=['GET','POST'])
-def detect(id):
-    if request.method == 'POST':
-
-        result = request.form['id']
-
-        url = "https://api.themoviedb.org/3/movie/" + result + "?api_key=fa03116693262062589d14a72cc612d0"
-
-        #url = "https://api.themoviedb.org/3/movie/343611?api_key=fa03116693262062589d14a72cc612d0"
-        response = urllib.request.urlopen(url)
-        data = json.loads(response.read())
-        ret = ''
-        ret = ret + "<h1>Title: "
-        ret = ret + str(data.get(u'title')) + "</h1>"
-        ret = ret + "<h1>Poster: "#just try(Delete if not working)
-        ret = ret + 'https://image.tmdb.org/t/p/w500' + str(data.get(u'poster_path')) + "</h1>"#just try(Delete if not working)
-        ret = ret + "<h2>"
-        ret = ret + str(data.get(u'tagline')) + "</h2>"
-        ret = ret + "<h3>Overview: "
-        ret = ret + str(data.get(u'overview')) + "</h3>"
-        ret = ret + "<h2>Release Date: "
-        ret = ret + str(data.get(u'release_date')) + "</h2>"
-        return ret
-    else:
-        return  render_template("test.html")
-"""
-
 
 if __name__ == "__main__":
     app.run(debug=True)
