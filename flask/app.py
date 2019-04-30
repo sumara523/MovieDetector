@@ -98,6 +98,7 @@ def account():
     if request.method == 'POST':
         phone = db.phone.find_one({})
         db.phone.delete_many({})
+        user_number = phone['phone']
         id = request.form['search_results']
         url = 'https://api.themoviedb.org/3/movie/' + id + '?api_key=' + api_key + '&language=en-US'
         movie_info = get_json(url)
@@ -120,6 +121,8 @@ def account():
                 "watchlist":[]
             }
             db.collection.insert_one(insert_user)
+        #twilio call
+        registertext(user_number, title)
 
         db.collection.find_one_and_update(
             { 'name': session["name"] },
@@ -192,19 +195,21 @@ def detect():
         return render_template("test.html", movies = movies, listnum = len(movies))
     else:
         return render_template("test.html")
-def text(number, movie):
+
+
+def registertext(number, movie):
     # Your Account Sid and Auth Token from twilio.com/console
     account_sid = 'AC00192dda66594328c17c3ea44ff4153b'
-    auth_token = 'twilio will suspend my account if i share this'
+    auth_token = 'make sure you dont push the token'
     client = Client(account_sid, auth_token)
-
     message = client.messages.create(
-        from_='+19282956808',
-        body='I died',
-        to='+18605183270'
+        from_='+18608524749',
+        body='Welcome to MovieDetector! You are now registered for the movie: ' + movie,
+        to='+1' + number
     )
-
     print(message.sid)
+
+
 """
 @app.route('/test', methods=['GET','POST'])
 def detect(id):
@@ -215,7 +220,6 @@ def detect(id):
         url = "https://api.themoviedb.org/3/movie/" + result + "?api_key=fa03116693262062589d14a72cc612d0"
 
         #url = "https://api.themoviedb.org/3/movie/343611?api_key=fa03116693262062589d14a72cc612d0"
-
         response = urllib.request.urlopen(url)
         data = json.loads(response.read())
         ret = ''
@@ -233,5 +237,7 @@ def detect(id):
     else:
         return  render_template("test.html")
 """
+
+
 if __name__ == "__main__":
     app.run(debug=True)
