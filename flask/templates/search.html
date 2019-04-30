@@ -33,25 +33,34 @@
 </head>
 
 <body>
-  {% block body %}
-  <h2>Please Log-in to use Watchlist</h2>
-  {% if session['log-in'] %}
-  <li>Log in as {{ session["name"] }}</li>
-  <a href="{{ url_for('logout') }}" class="btn btn-warning" role="button">logout</a>
-  {% else %}
-  Sign in with Facebook.
-
-  <a href="{{ url_for('login') }}"><img src="{{
-        url_for('static', filename='img/sign-in2.png') }}" alt="sign in"></a>
-  {% endif %}
-  {% endblock %}
-
   <div class="container-fluid">
-    <h3>MovieDetector</h3>
-    <i>Search Movie Title </i>
+    <br>
+    {% block body %}
+    <h2>Please Log-in to use Watchlist</h2>
+    {% if session['log-in'] %}
+    <li>Logged in as {{ session["name"] }}</li>
+    <a href="{{ url_for('logout') }}" class="btn btn-warning" role="button">logout</a>
+    {% else %}
+    Sign in with Facebook.
+
+    <a href="{{ url_for('login') }}"><img src="{{
+        url_for('static', filename='img/sign-in2.png') }}" alt="sign in"></a>
+    {% endif %}
+    {% endblock %}
+    <br>
+    <br>
+    <h1>MovieDetector</h1>
+    <br>
     <form action="/results" method="POST">
-      <input type="text" name="movie_search">
-      <input type="submit" name="submit">
+      <div class="form-group">
+        <label for="phone">Enter phone number for user account</label>
+        <input type="text" class="form-control" name="phone" id="phone">
+      </div>
+      <div class="form-group">
+        <label for="movie_search">Search for Movie</label>
+        <input type="text" class="form-control" name="movie_search" id="movie_search">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
 

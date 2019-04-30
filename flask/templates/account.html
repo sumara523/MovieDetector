@@ -14,7 +14,28 @@
 
 <body>
   <div class="fluid-container">
-    <h1>{{info['name']}}</h1>
+    <br>
+    <div class="row">
+      <div style="margin-left:30%" class="col">
+        <h1>Account information</h1>
+      </div>
+      <div style="margin-left:10%" class="col">
+        <a href="/search" class="btn btn-primary active" role="button" aria-pressed="true">Search More</a>
+      </div>
+    </div>
+    <div class="">
+      <br>
+      <h2>Name: {{info['name']}}</h2>
+      <h2>Phone Number: {{info['phone_number']}}</h2>
+      <h2>Watchlist</h2>
+      <br>
+      {% for i in info['watchlist'] %}
+      <h4>Movie Title: {{i['title']}}</h4>
+      <h4>Release Date: {{i['release_date']}}</h4>
+      <br>
+      {% endfor %}
+    </div>
+  </div>
   </div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

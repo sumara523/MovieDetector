@@ -83,16 +83,20 @@ def search():
 def results():
     if request.method == 'POST':
         keyword = request.form['movie_search']
+        phone_number = request.form['phone']
         url = 'https://api.themoviedb.org/3/search/movie?api_key=fa03116693262062589d14a72cc612d0&page=1&query=' + keyword
         img_url = 'https://image.tmdb.org/t/p/w500'
         movie_list = get_json(url)
         movie_results = movie_list['results']
+        db.phone.insert_one({"phone": phone_number})
     return render_template("results.html", movie_results = movie_results)
 
 '''Store selected movie into user account and display movies in user account '''
 @app.route('/account', methods = ['GET','POST'])
 def account():
     if request.method == 'POST':
+        phone = db.phone.find_one({})
+        db.phone.delete_many({})
         id = request.form['search_results']
         url = 'https://api.themoviedb.org/3/movie/' + id + '?api_key=' + api_key + '&language=en-US'
         movie_info = get_json(url)
@@ -108,8 +112,10 @@ def account():
 
         if db.collection.count_documents({"name": session["name"]}) == 0:
             print("User not found, will insert")
+            user_number = phone['phone']
             insert_user = {
                 "name": session["name"],
+                "phone_number": user_number,
                 "watchlist":[]
             }
             db.collection.insert_one(insert_user)
