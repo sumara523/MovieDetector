@@ -200,7 +200,7 @@ def detect():
 def registertext(number, movie):
     # Your Account Sid and Auth Token from twilio.com/console
     account_sid = 'AC00192dda66594328c17c3ea44ff4153b'
-    auth_token = 'make sure you dont push the token'
+    auth_token = '827119ae4c807c269e5f24b2c02cdd0e'
     client = Client(account_sid, auth_token)
     message = client.messages.create(
         from_='+18608524749',
