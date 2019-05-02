@@ -126,12 +126,16 @@ def account():
         registertext(user_number, title)
 
         current_user = db.collection.find_one({"name": session["name"]})
+        counter = 0
         for i in current_user['watchlist']:
-            if (title in i.values() == 0):
-                db.collection.find_one_and_update(
-                    { 'name': session["name"] },
-                    { '$push': { 'watchlist': insert_movie } }
-                )
+            if title in i.values():
+                counter+=1
+
+        if (counter == 0):
+            db.collection.find_one_and_update(
+                { 'name': session["name"] },
+                { '$push': { 'watchlist': insert_movie } }
+            )
 
         account_info = db.collection.find_one({'name': session["name"]})
     return render_template("account.html", info = account_info)
@@ -204,11 +208,7 @@ def detect():
 def registertext(number, movie):
     # Your Account Sid and Auth Token from twilio.com/console
     account_sid = 'AC00192dda66594328c17c3ea44ff4153b'
-<<<<<<< HEAD
-    auth_token = ''
-=======
     auth_token = twilio_token
->>>>>>> refs/remotes/origin/master
     client = Client(account_sid, auth_token)
     message = client.messages.create(
         from_='+18608524749',
