@@ -1,8 +1,8 @@
-As a logged-in user, I want to subscribe a specific movie in order to receive the updated news and movieÅfs info.
+As a logged-in user, I want to subscribe a specific movie in order to receive an alert a few day before the release date.
 
 Problem: 
-    Q1: How to send the user an information?
-    A1: We notify the user by text that there is an update on the movie they subscribed to.
+    Q1: How will user get an alert?
+    A1: We notify the user by texting their phone number that the release is near for the movie they subscribed to.
 
-    Q2: How will a user subscribe to a movie
-    A2: We ask for their social media/phone number on our user friendly web app.
+    Q2: How to register phone number to user's account?
+    A2: We ask for their phone number on our user friendly web app before searching.
