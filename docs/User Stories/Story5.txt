@@ -1,5 +1,5 @@
-As a logged-in user, I want to unsubscribe a specific movie in order to quit getting its update news and delete it from ÅgWatchlistÅh.
+As a logged-in user, I should be able to log-out, while my WatchList is saved as the way they are before log-out
 
 Problem:
-        Q1: What will happen to the info they got before unsubscribing
-        A1: The former info they got will stay as it is, but the user will not get a new notification
+        Q1: Will the user lose their WatchList?
+        A1: That would never happen since we store all user's activity in the database.

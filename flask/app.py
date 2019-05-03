@@ -125,10 +125,17 @@ def account():
         #twilio call
         registertext(user_number, title)
 
-        db.collection.find_one_and_update(
-            { 'name': session["name"] },
-            { '$push': { 'watchlist': insert_movie } }
-        )
+        current_user = db.collection.find_one({"name": session["name"]})
+        counter = 0
+        for i in current_user['watchlist']:
+            if title in i.values():
+                counter+=1
+
+        if (counter == 0):
+            db.collection.find_one_and_update(
+                { 'name': session["name"] },
+                { '$push': { 'watchlist': insert_movie } }
+            )
 
         account_info = db.collection.find_one({'name': session["name"]})
     return render_template("account.html", info = account_info)
@@ -183,7 +190,7 @@ def detect():
     if request.method == 'POST':
         result = request.form['title']
 
-        url = 'https://api.themoviedb.org/3/search/movie?api_key=fa03116693262062589d14a72cc612d0&page=1&query=' + (result.replace(":", "%3A")).replace(" ", "%20")
+        url = 'https://api.themoviedb.org/3/search/movie?api_key=fa03116693262062589d14a72cc612d0&page=1&query=%20' + (result.replace(":", "%3A")).replace(" ", "%20")
         img_url = 'https://image.tmdb.org/t/p/w500'
         movie_list = get_json(url)
         movies = []

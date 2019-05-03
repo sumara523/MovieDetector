@@ -1,5 +1,8 @@
-As a logged-in user, I want to type a name of a movie in order to get the info.
+As a logged-in user, I would like to type and search for a name of a movie in order to get the get movie detail(Title, Poster and Short story).
 
 Problem:
         Q1: How will the users be able to search for movies?
-        A1: We can match the movie name to itÅfs ID in the database.
+        A1: The user can just type the movie name or keyword in the serach box and click submit.
+        
+        Q2: What if I just enter nothing?
+        A2: The next page will warn the user to type in the keyword or movie name, so what they can do is go back to previous page.
