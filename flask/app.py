@@ -80,6 +80,8 @@ def index():
 def search():
     return render_template("search.html")
 
+
+
 '''Route to display search results and allow user to select movie'''
 @app.route('/results', methods = ['GET','POST'])
 def results():
