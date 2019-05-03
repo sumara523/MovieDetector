@@ -1,8 +1,15 @@
-body {
-  background-color: #2C3531;
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
 }
 
-h1 {
-  color: navy;
-  margin-left: 20px;
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/w3images/coffeehouse.jpg");
+  min-height: 75%;
+}
+
+.menu {
+  display: none;
 }
