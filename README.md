@@ -8,8 +8,8 @@ This web app asks the user the names of movies and let the user stores them in h
 
 ## Team members
 * [Chanvee Prasopsanti](https://github.com/cprasop)
-* [Sumara writes your full name here](https://github.com/sumara523)
-* [Ezira writes your full name here](https://github.com/ezirayw)
+* [Sumara Ali](https://github.com/sumara523)
+* [Ezira Carlton Yimer Wolle](https://github.com/ezirayw)
 ## Development Tool
 
 * [Pycharm Professional Edition](https://www.jetbrains.com/pycharm/download/)
